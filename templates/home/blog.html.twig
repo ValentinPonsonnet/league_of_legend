@@ -14,7 +14,7 @@
                 <h5 class="card-title">{{news.title}}</h5>
                 <p class="card-text">{{news.content |u.truncate(100, "...")}}</p>
                 <p class="text-muted">Créer par : {{news.user.lastName}} {{news.user.firstName}} - {{news.createdAt| ago}}</p>
-                <a href="/post/{{news.id}}" class="btn btn-primary">Lire la suite de l'article</a>
+                <a href="/post/{{news.id}}" class="btn btn-primary">Lire la suite de l'article...</a>
             </div>
         </div>
     </div>
