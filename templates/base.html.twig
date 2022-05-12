@@ -27,8 +27,21 @@
                             <a class="nav-link" href="/blog">Blog</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/auteur">Page des auteurs</a>
+                            <a class="nav-link {{ is_granted ('IS_AUTHENTICATED_FULLY') == false ? 'disabled' }}"  href="/auteur">Page des auteurs</a>
                         </li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                    {% if is_granted ('IS_AUTHENTICATED_FULLY') %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/logout">Se déconnecter</a>
+                        </li>
+
+                    {% else %}
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login">Se connecter</a>
+                        </li>
+                    {% endif %}
                     </ul>
                 </div>
             </div>

@@ -11,6 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomeController extends AbstractController
 {
     /**
+     * Affichage par défaut
      * @Route("/", name="home")
      */
     public function acceuil(NewsRepository $newsRepository): Response
@@ -22,6 +23,7 @@ class HomeController extends AbstractController
     }
 
     /**
+     * Affichage du blog
      * @Route("/blog", name="blog")
      */
     public function blog(NewsRepository $allArticle): Response
@@ -33,6 +35,7 @@ class HomeController extends AbstractController
     }
 
     /**
+     * Affichage d'une vue
      * @Route("/post/{id}", name="one_article")
      */
     public function one_article(News $article)
