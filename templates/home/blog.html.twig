@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+       {% for news in allNews %}
+    <div class="col-md-3 mt-3 mb-3">
+        <div class="card" style="width: 18rem;">
+            <img src="{{news.image}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{news.title}}</h5>
+                <p class="card-text">{{news.content |u.truncate(100, "...")}}</p>
+                <p class="text-muted">Créer par : {{news.user.lastName}} {{news.user.firstName}} - {{news.createdAt| ago}}</p>
+                <a href="/post/{{news.id}}" class="btn btn-primary">Lire la suite de l'article...</a>
+            </div>
+        </div>
+    </div>
+        {% endfor %}      
+    </div>
+</div>
+
+{% endblock %}
