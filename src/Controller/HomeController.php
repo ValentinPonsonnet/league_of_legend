@@ -15,7 +15,7 @@ class HomeController extends AbstractController
      */
     public function acceuil(NewsRepository $newsRepository): Response
     {
-        $news = $newsRepository->findLastNews(4);
+        $news = $newsRepository->findLastNews(10);
         return $this->render('home/acceuil.html.twig',[
             'lastNews' => $news 
         ]);
