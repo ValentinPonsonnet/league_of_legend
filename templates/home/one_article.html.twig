@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <img src="{{article.image}}" alt="">
+            <h1>{{article.title}}</h1>
+            <p>{{article.content}}</p>
+            <p>{{article.user.lastName}} {{article.user.firstName}} - {{article.createdAt| ago}}</p>
+        </div>
+        <a href="/blog" class="btn btn-primary">Revenir au blog</a>
+    </div>
+</div>
+
+{% endblock %}

@@ -38,6 +38,28 @@ class NewsRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
+    public function findLastNews(int $nb=5)
+    {
+        return $this->createqueryBuilder('n')
+        ->andWhere('n.status = :status')
+        ->setParameter('status', 'PUBLISH')
+        ->orderBy('n.createdAt', 'DESC')
+        ->setMaxResults($nb)
+        ->getQuery()
+        ->getResult();
+    }
+
+    public function findArticle(int $nb=0)
+    {
+        return $this->createQueryBuilder('n')
+        ->andWhere('n.status = :status')
+        ->setParameter('status', 'PUBLISH')
+        ->orderBy('n.createdAt', 'DESC')
+        ->setMaxResults($nb)
+        ->getQuery()
+        ->getResult();
+
+    }
 
 //    /**
 //     * @return News[] Returns an array of News objects
