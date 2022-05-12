@@ -4,16 +4,16 @@
 
 {% block body %}
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
+    <div class="card">
+        <div>
             <img src="{{article.image}}" alt="">
-            <h1>{{article.title}}</h1>
-            <p>{{article.content}}</p>
-            <p>{{article.user.lastName}} {{article.user.firstName}} - {{article.createdAt| ago}}</p>
+            <div class="card-body">
+                <h5 class="card-title">{{article.title}}</h5>
+                <p class="card-text">{{article.content}}</p>
+                <p class="card-text">Ecrit par {{article.user.lastName}} {{article.user.firstName}}</p>
+                <a href="/blog" class="btn btn-primary">Retour au blog</a>
+            </div>
         </div>
-        <a href="/blog" class="btn btn-primary">Revenir au blog</a>
-    </div>
-</div>
+    </div> 
 
 {% endblock %}
