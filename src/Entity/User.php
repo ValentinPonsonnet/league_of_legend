@@ -37,6 +37,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $password;
 
+
+    /**
+     * @var string Le mot de passe apparait en clair 
+     */
+    private $plainPassword;
+
     /**
      * @ORM\Column(type="string", length=255)
      */
@@ -122,6 +128,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setPassword(string $password): self
     {
         $this->password = $password;
+
+        return $this;
+    }
+
+    public function getPlainPassword(): ?string
+    {
+        return $this->plainPassword;
+    }
+
+    public function setPlainPassword(?string $password): self
+    {
+        $this->plainPassword = $password;
 
         return $this;
     }

@@ -27,8 +27,28 @@
                             <a class="nav-link" href="/blog">Blog</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/auteur">Page des auteurs</a>
+                            <a class="nav-link {{ is_granted ('IS_AUTHENTICATED_FULLY') == false ? 'disabled' }}"  href="/users">Page des auteurs</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ is_granted ('IS_AUTHENTICATED_FULLY') == false ? 'disabled' }}"  href="">Ecrire un article</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                    {% if is_granted ('IS_AUTHENTICATED_FULLY') %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/logout">Se déconnecter</a>
+                        </li>   
+                        <li class="nav-items">
+                            <a href="" class="nav-link">Profil</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login">Se connecter</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link">S'inscrire</a>
+                        </li>
+                    {% endif %}
                     </ul>
                 </div>
             </div>

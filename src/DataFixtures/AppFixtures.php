@@ -37,7 +37,7 @@ class AppFixtures extends Fixture
                 ->setTitle($faker->title($nbword = 5))
                 ->setContent($faker->text())
                 ->setStatus($faker->randomElement(["PUBLISH","DISABLED","DRAFT", "DELETED"]))
-                ->setImage($faker->imageUrl(640,480, 'animals', true))
+                ->setImage($faker->imageUrl(550,780, 'animals', true))
                 ->setCreatedAt($faker->dateTimeBetween("-1 months", "now", "Europe/Paris"))
                 ->setUser($user);
                 $manager->persist($news);
