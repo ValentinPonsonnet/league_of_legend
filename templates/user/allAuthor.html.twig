@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Auteurs{% endblock %}
+
+{% block body %}
+
+    <div class="container mt-3 mb-3">
+        <table class="table-hovered">
+            <thead>
+                <tr>
+                    <th>
+                        Nom
+                    </th>
+                    <th>
+                        Prénom
+                    </th>
+                    <th>
+                        Email
+                    </th>
+                    <th>
+                        Nombre d'article écrit
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                    <tr>
+                        <td>{{ user.lastName }}</td>
+                        <td>{{ user.firstName }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.news | length }}</td>
+                    </tr>        
+                {% endfor %} 
+            </tbody>
+        </table>       
+    </div>
+
+{% endblock %}

@@ -14,6 +14,7 @@ class HomeController extends AbstractController
      * Affichage par défaut
      * @Route("/", name="home")
      */
+
     public function acceuil(NewsRepository $newsRepository): Response
     {
         $news = $newsRepository->findLastNews(10);
@@ -28,7 +29,7 @@ class HomeController extends AbstractController
      */
     public function blog(NewsRepository $allArticle): Response
     {   
-        $news = $allArticle->findArticle(12);
+        $news = $allArticle->findArticle(3);
         return $this->render('home/blog.html.twig',[
                 'allNews' => $news
             ]);
