@@ -29,7 +29,7 @@ class HomeController extends AbstractController
      */
     public function blog(NewsRepository $allArticle): Response
     {   
-        $news = $allArticle->findArticle(3);
+        $news = $allArticle->findArticle(12);
         return $this->render('home/blog.html.twig',[
                 'allNews' => $news
             ]);
