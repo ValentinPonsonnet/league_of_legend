@@ -38,7 +38,7 @@ class NewsRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
-    public function findLastNews(int $nb=5)
+    public function findLastNews(int $nb=1)
     {
         return $this->createqueryBuilder('n')
         ->andWhere('n.status = :status')

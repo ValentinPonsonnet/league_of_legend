@@ -9,6 +9,7 @@
             {% for news in lastNews %}
                 <div class="card ml-3 mb-3">
                     <div class="card-body">
+                        <img class="card-img-top" src="{{news.image}}"
                         <h5 class="card-title">{{news.title}}</h5>
                         <h6 class="card-subtitle mb-2 text-muted">Ecrit par {{news.user.lastName}} {{news.user.firstName}} {{news.createdAt | ago}} </h6>
                         <p class="card-text">{{news.content}}</p>

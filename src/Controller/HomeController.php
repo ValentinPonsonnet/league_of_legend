@@ -17,7 +17,7 @@ class HomeController extends AbstractController
 
     public function acceuil(NewsRepository $newsRepository): Response
     {
-        $news = $newsRepository->findLastNews(10);
+        $news = $newsRepository->findLastNews(9);
         return $this->render('home/acceuil.html.twig',[
             'lastNews' => $news 
         ]);
@@ -29,7 +29,7 @@ class HomeController extends AbstractController
      */
     public function blog(NewsRepository $allArticle): Response
     {   
-        $news = $allArticle->findArticle(3);
+        $news = $allArticle->findArticle(9);
         return $this->render('home/blog.html.twig',[
                 'allNews' => $news
             ]);
